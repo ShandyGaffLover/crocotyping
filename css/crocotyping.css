@@ -11,7 +11,7 @@ figure#crocodile{
     left: 200px;
 }
 body{
-    background-image: url("img/mangrove_hayashi.png");
+    background-image: url("../img/mangrove_hayashi.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
