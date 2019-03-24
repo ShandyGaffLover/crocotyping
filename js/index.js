@@ -1,4 +1,4 @@
 function moveToTheGamePage(){
-    location.href = '/crocotyping/html/crocotyping.html';
+    location.href = 'html/crocotyping.html';
 }
 moveToTheGamePage();
