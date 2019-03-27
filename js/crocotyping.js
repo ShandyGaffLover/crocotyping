@@ -55,7 +55,7 @@ function createQuiz(){
     return createQuizHtml('asdf');
 }
 function createQuizHtml(phrase){
-    let tableTag = `<table id='quiz'><tbody><tr id='quizRow'>`;
+    let tableTag = `<table id='quiz' align='center'><tbody><tr id='quizRow'>`;
     for(let i=0;i<phrase.length;i++){
         const tdTag = `<td id='td${i+1}'>${phrase[i]}</td>`;
         tableTag += tdTag;
@@ -74,7 +74,7 @@ function handleKeyup(event){
 }
 function updateQuizPhraseState(){
     const nextCharacter = document.querySelector('#td'+nextCharacterNum);
-    nextCharacter.style.color='lightgrey';
+    nextCharacter.style.color='whitesmoke';
     nextCharacterNum++;
 }
 function startMovingCrocodile(){

@@ -18,3 +18,16 @@ body{
     background-size: cover;
     position: relative;
 }
+table#quiz{
+    border: 2px #000000 solid;
+    font-size: 24pt;
+    text-align: center;
+    line-height: 200%; 
+    width: 300px;
+    background-color:white;
+}
+#tp{
+    text-align: center;
+    font-size: 14pt;
+    color: white;
+}
