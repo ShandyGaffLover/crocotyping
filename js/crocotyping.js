@@ -19,6 +19,7 @@ function execRound(){
         return;
     }
     setQuiz();
+    document.querySelector('#hammer').style.visibility='hidden';
     movingCrocodile = startMovingCrocodile();
     roundCount++;
 }
@@ -70,6 +71,7 @@ function handleKeyup(event){
     }
     if(nextCharacter===document.querySelector('#quizRow').lastElementChild){
         movingCrocodile.pause();
+        document.querySelector('#hammer').style.visibility='visible';
     }
 }
 function updateQuizPhraseState(){

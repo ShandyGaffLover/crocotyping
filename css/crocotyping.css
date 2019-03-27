@@ -10,6 +10,13 @@ figure#crocodile{
     bottom: 0px;
     left: 200px;
 }
+figure#hammer{
+    float: left;
+    position: fixed;
+    bottom: 0px;
+    left: 200px;
+    visibility: hidden;
+}
 body{
     background-image: url("../img/mangrove_hayashi.png");
     background-repeat: no-repeat;
