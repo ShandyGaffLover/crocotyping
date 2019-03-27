@@ -31,9 +31,37 @@ function setQuiz(){
     if(prevQuiz !== null){
         document.querySelector('#quiz').remove(); 
     }
-    const quiz = `<table id='quiz'><tbody><tr id='quizRow'><td id='td1'>a</td><td id='td2'>s</td><td id='td3'>d</td><td id='td4'>f</td></tr></tbody></table>`
+    const quiz = createQuiz();
     tp.insertAdjacentHTML('afterend',quiz);
     nextCharacterNum = 1;
+}
+function createQuiz(){
+    const dice = Math.floor(Math.random()*6);
+    if(dice%6===1){
+        return createQuizHtml('jkl;');
+    }
+    if(dice%6===2){
+        return createQuizHtml('sees');
+    }
+    if(dice%6===3){
+        return createQuizHtml('juuj');
+    }
+    if(dice%6===4){
+        return createQuizHtml('fttf');
+    }
+    if(dice%6===5){
+        return createQuizHtml('kiik');
+    }
+    return createQuizHtml('asdf');
+}
+function createQuizHtml(phrase){
+    let tableTag = `<table id='quiz'><tbody><tr id='quizRow'>`;
+    for(let i=0;i<phrase.length;i++){
+        const tdTag = `<td id='td${i+1}'>${phrase[i]}</td>`;
+        tableTag += tdTag;
+    }
+    tableTag += `</tr></tbody></table>`;
+    return tableTag;
 }
 function handleKeyup(event){
     const nextCharacter = document.querySelector('#td'+nextCharacterNum);
