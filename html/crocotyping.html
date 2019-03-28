@@ -5,8 +5,16 @@
     <title></title>
     <link rel =" stylesheet" href ="../css/crocotyping.css"/>
     <script src="../js/crocotyping.js" defer> </script>
+    
 </head> 
 <body>
+    <div id="audioControl">
+        <audio id="bgm" src="../mp3/狩り.mp3" ></audio>
+        <audio id="sound_hammer" src="../mp3/劇的に殴る蹴るなどの_2.mp3"></audio>
+        <p>sound</p>
+        <button onclick="enableMute()" class="off active" type="button">OFF</button>
+        <button onclick="disableMute()" class="on" type="button">ON</button>
+    </div>
     <p id="tp">Type following phrase to save the person! :</p>
     <figure id="person"><img src="../img/pose_koshi_nukeru_kowai_man.png" width="240" height="240"></figure>
     <figure id="crocodile"><img src="../img/wani_close.png" ></figure>

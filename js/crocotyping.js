@@ -10,7 +10,16 @@ startGame();
 function startGame(){
     const bd = document.querySelector('body');
     bd.addEventListener('keyup',handleKeyup);
+    const buttons = document.querySelectorAll('#audioControl button');
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            button.classList.add('active');
+        });
+    });
     timeId = setInterval(execRound, interval);
+    const audio = document.querySelector('#bgm');
+    audio.volume = 0.5;
+    setTimeout(function(){audio.play()},interval);
 }
 function execRound(){
     if(roundCount >= maximumRound){
@@ -68,11 +77,14 @@ function handleKeyup(event){
     const nextCharacter = document.querySelector('#td'+nextCharacterNum);
     if(event.key===nextCharacter.textContent){
         updateQuizPhraseState();
+        if(nextCharacter===document.querySelector('#quizRow').lastElementChild){
+            movingCrocodile.pause();
+            document.querySelector('#hammer').style.visibility='visible';
+            const audio = document.querySelector('#sound_hammer');
+            setTimeout(function(){audio.play()},1);
+        }
     }
-    if(nextCharacter===document.querySelector('#quizRow').lastElementChild){
-        movingCrocodile.pause();
-        document.querySelector('#hammer').style.visibility='visible';
-    }
+
 }
 function updateQuizPhraseState(){
     const nextCharacter = document.querySelector('#td'+nextCharacterNum);
@@ -91,4 +103,15 @@ function startMovingCrocodile(){
     );
     return movingCrocodile;
 }
-
+function enableMute(){
+    const audio = document.querySelector('#bgm');
+    audio.muted = true;
+    const sh = document.querySelector('#sound_hammer');
+    sh.muted = true;
+}
+function disableMute(){
+    const audio = document.querySelector('#bgm');
+    audio.muted = false;
+    const sh = document.querySelector('#sound_hammer');
+    sh.muted = false;
+}

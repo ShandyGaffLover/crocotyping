@@ -5,4 +5,7 @@ original game as training of JavaScript
 かわいいフリー素材集 いらすとや
 https://www.irasutoya.com/
 
+＜音源の出典＞
+フリーBGM（音楽素材）無料ダウンロード｜DOVA-SYNDROME
+https://dova-s.jp/
 

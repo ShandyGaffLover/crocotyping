@@ -38,3 +38,10 @@ table#quiz{
     font-size: 14pt;
     color: white;
 }
+#audioControl button.active {
+    background: #ccc;
+}
+ 
+#audioControl button:not(.active):hover {
+    background: rgba(204, 204, 204, 0.3);
+}
